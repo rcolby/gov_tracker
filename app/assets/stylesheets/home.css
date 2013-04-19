@@ -14,3 +14,10 @@
   padding: 5px;
   width: 80%;
 }
+
+#floor_updates {
+  position: relative;
+  border: 1px solid blue;
+  padding: 5px;
+  width: 80%;
+}

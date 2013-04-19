@@ -7,5 +7,11 @@ class HomeController < ApplicationController
     end
     c = Congress.new
     @upcoming = c.upcoming_bills[:results]
+    @floor_updates = c.floor_updates[:results]
+  end
+
+  def detail
+    
+
   end
 end
