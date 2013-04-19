@@ -3,7 +3,7 @@ GuvWatch::Application.routes.draw do
   get "/home/index"
   devise_for :users
   get "/users/sign_out", :controller => "devise/sessions", :action => "destroy"
-  get "/home/detail/:id" => 'home#detail'
+  get "/home/detail/:bioguide_id" => 'home#detail'
   # devise_for :users, :controllers => {:registrations => "registrations"}
 
 

@@ -11,7 +11,6 @@ class HomeController < ApplicationController
   end
 
   def detail
-    
-
+    @legislator = Legislator.find_by_bioguide_id(params[:bioguide_id])
   end
 end
