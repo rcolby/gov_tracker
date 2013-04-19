@@ -1,0 +1,23 @@
+<div id="upcoming">
+  <h4>Upcoming Legislation</h4>
+  <table>
+    <tr>
+      <th>Chamber</th>
+      <th>Bill #</th>
+      <th>Context</th>
+      <th>Link</th>
+    </tr>
+    <% @upcoming.each do |bill| %>
+      <tr>
+        <td><%= bill[:chamber] %></td>
+        <td><%= bill[:bill_id] %></td>
+        <td><% if bill[:context].nil? %>
+              No summary available.
+            <% else %>
+              <%= bill[:context] %>
+            <% end %></td>
+        <td><a href=<%= bill[:url] %> target="_blank">Link</a></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

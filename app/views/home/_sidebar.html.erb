@@ -1,0 +1,20 @@
+<div id="sidebar">
+  <p>You are represented by:</p>
+    <div>
+      <h4><%= @rep.title %>. <%= @rep.firstname %> <%= @rep.middlename %> <%= @rep.lastname %></h4>
+      <h5><%= @rep.state %> - District <%= @rep.district %></h5>
+      <%= image_tag("small/#{@rep.bioguide_id}.jpg") %>
+    </div>
+    <% unless @sr_sen.nil? %>
+      <div>
+        <h4><%= @sr_sen.title %>. <%= @sr_sen.firstname %> <%= @sr_sen.middlename %> <%= @sr_sen.lastname %></h4>
+        <h5><%= @sr_sen.state %></h5>
+          <%= image_tag("small/#{@sr_sen.bioguide_id}.jpg") %>
+      </div>
+      <div>
+        <h4><%= @jr_sen.title %>. <%= @jr_sen.firstname %> <%= @jr_sen.middlename %> <%= @jr_sen.lastname %></h4>
+        <h5><%= @jr_sen.state %></h5>
+          <%= image_tag("small/#{@jr_sen.bioguide_id}.jpg") %>
+      </div>
+    <% end %>
+</div>

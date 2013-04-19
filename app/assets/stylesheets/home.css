@@ -1,0 +1,16 @@
+#sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid;
+  background-color: #FF00FF;
+  padding: 5px;
+  width: 150px;
+}
+
+#upcoming {
+  position: relative;
+  border: 1px dotted;
+  padding: 5px;
+  width: 80%;
+}
