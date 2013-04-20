@@ -4,6 +4,8 @@ GuvWatch::Application.routes.draw do
   devise_for :users
   get "/users/sign_out", :controller => "devise/sessions", :action => "destroy"
   get "/home/detail/:bioguide_id" => 'home#detail'
+  get "/compose_email" => "home#compose_email"
+  post "/send_email" => "home#send_email"
   # devise_for :users, :controllers => {:registrations => "registrations"}
 
 

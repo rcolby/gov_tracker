@@ -1,0 +1,15 @@
+<h3>Compose a New Message</h3>
+<form action="/send_email" method="post">
+  <div>
+    <input type="email" name="to" placeholder="Recipient's email address">
+  </div>
+  <div>
+    <input type="text" name="subject" placeholder="Subject">
+  </div>
+  <div>
+    <%= text_area_tag :body, "", :placeholder => "Enter message text" %>
+  </div>
+  <div>
+    <%= submit_tag "Send your message" %>
+  </div>
+</form>

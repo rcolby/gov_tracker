@@ -11,6 +11,34 @@ class HomeController < ApplicationController
   end
 
   def detail
+    c = Congress.new
     @legislator = Legislator.find_by_bioguide_id(params[:bioguide_id])
+    @committees = c.committees(:member_ids => @legislator.bioguide_id)[:results]
+    @birthdate = Time.parse(@legislator.birthdate).strftime("%A, %B %e, %Y")
+
+    case @legislator.party
+      when 'D'
+        @party = "Democrat"
+      when 'R'
+        @party = "Republican"
+      when 'I'
+        @party = "Independent"
+      else
+        @party = "Unknown"
+    end
+
+
+
+
+  end
+
+  def compose_email
+    #stub
+  end
+
+  def send_email
+    @to = params[:to]
+    @subject = params[:subject]
+    Postman.form_email(@to, @subject, params[:body]).deliver
   end
 end

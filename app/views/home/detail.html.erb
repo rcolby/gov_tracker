@@ -1,2 +1,39 @@
-<h3><%= @legislator.title %>. <%= @legislator.firstname %> <%= @legislator.middlename%> <%= @legislator.lastname %></h3>
-<%= image_tag("large/#{@legislator.bioguide_id}.jpg") %>
+<h3><%= @legislator.title %>. <%= @legislator.firstname %> <%= @legislator.middlename%> <%= @legislator.lastname %> - <%= @party %></h3>
+<%= image_tag("large/#{@legislator.bioguide_id}.jpg") %><br>
+
+<% unless @legislator.website.nil? %>
+  <%= link_to "www", @legislator.website %>
+<% end %>
+
+<% unless @legislator.twitter_id.nil? %>
+  <%= link_to "Twitter", "https://www.twitter.com/#{@legislator.twitter_id}" %>
+<% end %>
+
+<% unless @legislator.facebook_id.nil? %>
+  <%= link_to "FB", "https://www.facebook.com/#{@legislator.facebook_id}" %>
+<% end %>
+
+<% unless @legislator.youtube_url.nil? %>
+  <%= link_to "YT", @legislator.youtube_url %>
+<% end %>
+
+<% unless @legislator.official_rss.nil? %>
+  <%= link_to "RSS", @legislator.official_rss %>
+<% end %>
+
+<% unless @legislator.webform.nil? %>
+  <%= link_to "contact", @legislator.webform %>
+<% end %>
+<hr>
+<h4>Born: <%= @birthdate %></h4>
+<h4>Office: <%= @legislator.congress_office %></h4>
+<h4>Phone: <%= @legislator.phone %></h4>
+<h4>Fax: <%= @legislator.fax %></h4>
+
+<% unless @committees.empty? %>
+  <h4>Committees:</h4>
+    <ul>
+    <% @committees.each do |c| %>
+      <li><%= c[:name] %></li>
+    <% end %>
+<% end %>
