@@ -8,18 +8,33 @@ a:link {
 }
 
 a:hover {
-  color: #D7D686;
+  color: #9B000B;
   text-decoration: none;
   font-weight: bold;
 }
 
 a:visited {
-  color: #9B000B;
+  color: #4C0000;
   text-decoration: none;
+}
+
+#header {
+  background-color: #4C0000;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 30px;
+  color: white;
+  padding: 15px 10px 15px 10px;
+  height: 100px;
+}
+
+#main {
+  margin-top: 20px;
+  margin-right: 170px;
 }
 
 #container {
   width: 90%;
+  height: 90%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -29,16 +44,17 @@ a:visited {
   width: 80%;
   top: 20px;
   left: 0;
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
   color: white;
   background-color: #05396A;
-  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: right;
+  margin-right: 170px;
 }
 
 #sidebar {
   position: absolute;
-  top: 0;
+  top: 130px;
   right: 0;
   background-color: #05396A;
   padding: 5px;
@@ -47,14 +63,64 @@ a:visited {
 
 #upcoming {
   position: relative;
-  border: 1px dotted;
+  margin-top: 20px;
   padding: 5px;
   width: 80%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #floor_updates {
+  margin-top: 20px;
   position: relative;
-  border: 1px solid blue;
   padding: 5px;
   width: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table th {
+  background-color: #4C0000;
+  font-size: 14px;
+  padding: 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: #05396A;
+  color: white;
+  font-size: 14px;
+}
+table tr:nth-child(odd) {
+  background-color: #9B000B;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+.section_title {
+  color: #4C0000;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;  
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.greeting {
+  font-size: 14px;
+}
+
+.auth_link {
+  text-align: right;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

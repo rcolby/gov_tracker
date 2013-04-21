@@ -1,5 +1,5 @@
 <div id="floor_updates">
-  <h4>Recent Floor Activity</h4>
+  <h4 class="section_title">Recent Floor Activity</h4>
   <table>
     <tr>
       <th>Chamber</th>
@@ -8,7 +8,7 @@
     </tr>
     <% @floor_updates.each do |update| %>
       <tr>
-        <td><%= update[:chamber] %></td>
+        <td class="capitalize"><%= update[:chamber] %></td>
         <td class="uppercase"><% unless update[:bill_ids].empty? %>
               <% update[:bill_ids].each do |bill| %>
                 <%= bill %>

@@ -1,5 +1,5 @@
 <div id="upcoming">
-  <h4>Upcoming Legislation</h4>
+  <h4 class="section_title">Upcoming Legislation</h4>
   <table>
     <tr>
       <th>Chamber</th>
@@ -9,7 +9,7 @@
     </tr>
     <% @upcoming.each do |bill| %>
       <tr>
-        <td><%= bill[:chamber] %></td>
+        <td class="capitalize"><%= bill[:chamber] %></td>
         <td class="uppercase"><%= bill[:bill_id] %></td>
         <td><% if bill[:context].nil? %>
               No summary available.
