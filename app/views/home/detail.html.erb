@@ -1,39 +1,59 @@
-<h3><%= @legislator.title %>. <%= @legislator.firstname %> <%= @legislator.middlename%> <%= @legislator.lastname %> - <%= @party %></h3>
-<%= image_tag("large/#{@legislator.bioguide_id}.jpg") %><br>
+<div id="header">
+  <h1>Gov Watch</h1>
+</div>
 
-<% unless @legislator.website.nil? %>
-  <%= link_to "www", @legislator.website %>
-<% end %>
+<%= render 'home/signin' %>
 
-<% unless @legislator.twitter_id.nil? %>
-  <%= link_to "Twitter", "https://www.twitter.com/#{@legislator.twitter_id}" %>
-<% end %>
+<%= render 'home/sidebar' %>
 
-<% unless @legislator.facebook_id.nil? %>
-  <%= link_to "FB", "https://www.facebook.com/#{@legislator.facebook_id}" %>
-<% end %>
 
-<% unless @legislator.youtube_url.nil? %>
-  <%= link_to "YT", @legislator.youtube_url %>
-<% end %>
+<h3 class="section_title"><%= @title %> <%= @legislator.firstname %> <%= @legislator.middlename%> <%= @legislator.lastname %> - <%= @party %></h3>
+<div class="pic_border">
+  <%= image_tag("large/#{@legislator.bioguide_id}.jpg", :class => "large_pic", :alt => "Legislator Photo") %><br>
 
-<% unless @legislator.official_rss.nil? %>
-  <%= link_to "RSS", @legislator.official_rss %>
-<% end %>
+  <% unless @legislator.website.nil? %>
+    <%= link_to image_tag("computer_32.png", :border => 0, :alt => "Website"), @legislator.website %>
+  <% end %>
 
-<% unless @legislator.webform.nil? %>
-  <%= link_to "contact", @legislator.webform %>
-<% end %>
-<hr>
-<h4>Born: <%= @birthdate %></h4>
-<h4>Office: <%= @legislator.congress_office %></h4>
-<h4>Phone: <%= @legislator.phone %></h4>
-<h4>Fax: <%= @legislator.fax %></h4>
+  <% unless @legislator.twitter_id.nil? %>
+    <%= link_to image_tag("twitter_32_light.png", :border => 0, :alt => "Twitter"), "https://www.twitter.com/#{@legislator.twitter_id}" %>
+  <% end %>
+
+  <% unless @legislator.facebook_id.nil? %>
+    <%= link_to image_tag("facebook_32.png", :border => 0, :alt => "Facebook"), "https://www.facebook.com/#{@legislator.facebook_id}" %>
+  <% end %>
+
+  <% unless @legislator.youtube_url.nil? %>
+    <%= link_to image_tag("youtube_32.png", :border => 0, :alt => "YouTube"), @legislator.youtube_url %>
+  <% end %>
+
+  <% unless @legislator.official_rss.nil? %>
+    <%= link_to image_tag("rss.png", :border => 0, :alt => "RSS feed"), @legislator.official_rss %>
+  <% end %>
+
+  <% unless @legislator.webform.nil? %>
+    <%= link_to image_tag("contact_32.png", :border => 0, :alt => "Contact Form"), @legislator.webform %>
+  <% end %>
+</div>
+<dl>
+  <dt>Born:</dt> 
+    <dd><%= @birthdate %></dd>
+  <dt>Office:</dt>
+    <dd><%= @legislator.congress_office %></dd>
+  <dt>Phone:</dt>
+    <dd><%= @legislator.phone %></dd>
+  <dt>Fax:</dt>
+    <dd><%= @legislator.fax %></dd>
+</dl>
 
 <% unless @committees.empty? %>
-  <h4>Committees:</h4>
-    <ul>
-    <% @committees.each do |c| %>
-      <li><%= c[:name] %></li>
-    <% end %>
+  <div id="committees">
+    <h4 class="section_head">Committees:</h4>
+      <ul>
+      <% @committees.each do |c| %>
+        <li><%= c[:name] %></li>
+      <% end %>
+  </div>
 <% end %>
+
+<%= render 'home/footer' %>

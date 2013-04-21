@@ -27,7 +27,20 @@ class HomeController < ApplicationController
         @party = "Unknown"
     end
 
+    case @legislator.title
+      when "Sen"
+        @title = "Senator"
+      when "Rep"
+        @title = "Representative"
+      else
+        @title = "Delegate"
+    end
 
+    if current_user
+      @rep = Legislator.where(:bioguide_id => current_user.rep).first
+      @sr_sen = Legislator.where(:bioguide_id => current_user.sr_sen).first
+      @jr_sen = Legislator.where(:bioguide_id => current_user.jr_sen).first
+    end
 
 
   end

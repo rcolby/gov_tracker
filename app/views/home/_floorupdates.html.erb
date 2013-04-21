@@ -9,7 +9,7 @@
     <% @floor_updates.each do |update| %>
       <tr>
         <td class="capitalize"><%= update[:chamber] %></td>
-        <td class="uppercase"><% unless update[:bill_ids].empty? %>
+        <td class="uppercase td_size"><% unless update[:bill_ids].empty? %>
               <% update[:bill_ids].each do |bill| %>
                 <%= bill %>
               <% end %>
