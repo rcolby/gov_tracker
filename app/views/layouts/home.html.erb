@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content="hi rob">
   <title>GuvWatch</title>
   <%= stylesheet_link_tag "home", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
