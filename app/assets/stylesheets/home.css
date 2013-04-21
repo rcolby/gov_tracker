@@ -14,7 +14,7 @@ a:hover {
 }
 
 a:visited {
-  color: #4C0000;
+  color: gray;
   text-decoration: none;
 }
 
@@ -184,7 +184,6 @@ ul {
 }
 
 footer {
-  position: absolute;
   bottom: 0px;
   background-color: #05396A;
   color: white;
