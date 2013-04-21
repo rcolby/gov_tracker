@@ -1,24 +1,53 @@
 <div id="sidebar">
   <% if user_signed_in? %>
     <p>You are represented by:</p>
-      <div>
+      <div class="legislator_detail_sb">
         <h4><%= @rep.title %>. <%= @rep.firstname %> <%= @rep.middlename %> <%= @rep.lastname %></h4>
-        <h5><%= @rep.state %> - District <%= @rep.district %></h5>
-        <%= image_tag("small/#{@rep.bioguide_id}.jpg") %>
+        <h5><%= @rep.party %> - <%= @rep.state %> - District <%= @rep.district %></h5>
+        <%= image_tag("small/#{@rep.bioguide_id}.jpg", :class => "small_pic") %>
         <p><%= link_to "View Detail", "/home/detail/#{@rep.bioguide_id}" %></p>
+        <% unless @rep.website.nil? %>
+          <%= link_to image_tag("computer_32.png", :class => "small_icon", :alt => "Website"), @rep.website %>
+        <% end %>
+        <% unless @rep.twitter_id.nil? %>
+          <%= link_to image_tag("twitter_32.png", :class => "small_icon", :alt => "Twitter"), "https://www.twitter.com/#{@rep.twitter_id}" %>
+        <% end %>
+        <% unless @rep.facebook_id.nil? %>
+          <%= link_to image_tag("facebook_32.png", :class => "small_icon", :alt => "Facebook"), "https://www.facebook.com/#{@rep.facebook_id}" %>
+        <% end %>
       </div>
+
       <% unless @sr_sen.nil? %>
-        <div>
+        <div class="legislator_detail_sb">
           <h4><%= @sr_sen.title %>. <%= @sr_sen.firstname %> <%= @sr_sen.middlename %> <%= @sr_sen.lastname %></h4>
-          <h5><%= @sr_sen.state %></h5>
-          <%= image_tag("small/#{@sr_sen.bioguide_id}.jpg") %>
+          <h5><%= @sr_sen.party %> - <%= @sr_sen.state %></h5>
+          <%= image_tag("small/#{@sr_sen.bioguide_id}.jpg", :class => "small_pic") %>
           <p><%= link_to "View Detail", "/home/detail/#{@sr_sen.bioguide_id}" %></p>
+          <% unless @sr_sen.website.nil? %>
+            <%= link_to image_tag("computer_32.png", :class => "small_icon", :alt => "Website"), @sr_sen.website %>
+          <% end %>
+          <% unless @sr_sen.twitter_id.nil? %>
+            <%= link_to image_tag("twitter_32.png", :class => "small_icon", :alt => "Twitter"), "https://www.twitter.com/#{@sr_sen.twitter_id}" %>
+          <% end %>
+          <% unless @sr_sen.facebook_id.nil? %>
+            <%= link_to image_tag("facebook_32.png", :class => "small_icon", :alt => "Facebook"), "https://www.facebook.com/#{@sr_sen.facebook_id}" %>
+          <% end %>
         </div>
-        <div>
+
+        <div class="legislator_detail_sb">
           <h4><%= @jr_sen.title %>. <%= @jr_sen.firstname %> <%= @jr_sen.middlename %> <%= @jr_sen.lastname %></h4>
-          <h5><%= @jr_sen.state %></h5>
-          <%= image_tag("small/#{@jr_sen.bioguide_id}.jpg") %>
+          <h5><%= @jr_sen.party %> - <%= @jr_sen.state %></h5>
+          <%= image_tag("small/#{@jr_sen.bioguide_id}.jpg", :class => "small_pic") %>
           <p><%= link_to "View Detail", "/home/detail/#{@jr_sen.bioguide_id}" %></p>
+          <% unless @jr_sen.website.nil? %>
+            <%= link_to image_tag("computer_32.png", :class => "small_icon", :alt => "Website"), @jr_sen.website %>
+          <% end %>
+          <% unless @jr_sen.twitter_id.nil? %>
+            <%= link_to image_tag("twitter_32.png", :class => "small_icon", :alt => "Twitter"), "https://www.twitter.com/#{@jr_sen.twitter_id}" %>
+          <% end %>
+          <% unless @jr_sen.facebook_id.nil? %>
+            <%= link_to image_tag("facebook_32.png", :class => "small_icon", :alt => "Facebook"), "https://www.facebook.com/#{@jr_sen.facebook_id}" %>
+          <% end %>
         </div>
       <% end %>
     <% else %>
