@@ -46,6 +46,26 @@
     <dd><%= @legislator.fax %></dd>
 </dl>
 
+
+<% unless @twitter_feed.empty? %>
+  <h4 class="section_head">Recent Tweets</h4>
+  <div id="twitter_feed">
+    <table>
+      <tr>
+        <th>Date/Time</th>
+        <th>Tweet</th>
+      </tr>
+      <% @twitter_feed.each do |tweet| %>
+        <tr>
+          <td><%= Time.parse(tweet["created_at"]).strftime("%a, %b %e, %Y - %I:%M %p") %></td>
+          <td><%= tweet["text"] %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+
 <% unless @committees.empty? %>
   <div id="committees">
     <h4 class="section_head">Committees:</h4>

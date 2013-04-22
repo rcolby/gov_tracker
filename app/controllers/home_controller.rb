@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+  require 'json'
+  require 'open-uri'
+
   def index
     if current_user
       @rep = Legislator.where(:bioguide_id => current_user.rep).first
@@ -15,6 +18,11 @@ class HomeController < ApplicationController
     @legislator = Legislator.find_by_bioguide_id(params[:bioguide_id])
     @committees = c.committees(:member_ids => @legislator.bioguide_id)[:results]
     @birthdate = Time.parse(@legislator.birthdate).strftime("%A, %B %e, %Y")
+
+    unless @legislator.twitter_id.nil?
+      file = open("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=#{@legislator.twitter_id}")
+      @twitter_feed = JSON.parse(file.read)
+    end
 
     case @legislator.party
       when 'D'
