@@ -18,6 +18,7 @@ class HomeController < ApplicationController
     @legislator = Legislator.find_by_bioguide_id(params[:bioguide_id])
     @committees = c.committees(:member_ids => @legislator.bioguide_id)[:results]
     @birthdate = Time.parse(@legislator.birthdate).strftime("%A, %B %e, %Y")
+    @mp_key = ENV['MAPQUEST_KEY']
 
     unless @legislator.twitter_id.nil?
       file = open("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=#{@legislator.twitter_id}")
