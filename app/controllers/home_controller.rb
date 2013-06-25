@@ -1,6 +1,8 @@
+require 'json'
+require 'open-uri'
+
+
 class HomeController < ApplicationController
-  require 'json'
-  require 'open-uri'
 
   def index
     if current_user
