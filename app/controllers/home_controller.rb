@@ -22,10 +22,10 @@ class HomeController < ApplicationController
     @birthdate = Time.parse(@legislator.birthdate).strftime("%A, %B %e, %Y")
     @mp_key = ENV['MAPQUEST_KEY']
 
-    unless @legislator.twitter_id.nil?
-      file = open("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=#{@legislator.twitter_id}")
-      @twitter_feed = JSON.parse(file.read)
-    end
+    # unless @legislator.twitter_id.nil?
+    #   file = open("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=#{@legislator.twitter_id}")
+    #   @twitter_feed = JSON.parse(file.read)
+    # end
 
     case @legislator.party
       when 'D'
