@@ -70,23 +70,14 @@
         1,
         1,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
+        null,
         1,
-        0,
-        null,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null,
-        0,
         null,
         0,
         null,
@@ -95,7 +86,16 @@
         0,
         null,
         null,
+        1,
+        null,
+        1,
+        null,
         0,
+        null,
+        0,
+        null,
+        null,
+        1,
         0,
         0,
         0,
@@ -142,6 +142,11 @@
         null,
         null
       ],
+      "/Users/rob/Google Drive/WDI/guv_watch/app/mailers/user_mailer.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/rob/Google Drive/WDI/guv_watch/app/models/legislator.rb": [
         1,
         1,
@@ -153,6 +158,6 @@
         null
       ]
     },
-    "timestamp": 1371149717
+    "timestamp": 1393013834
   }
 }
